@@ -25,7 +25,7 @@ export default function DepositAmountPage() {
   const handleStudentSearch = async () => {
     if (studentId) {
       try {
-        const res = await axios.get(` http://localhost:4000/api/admissions/students/${studentId}`)
+        const res = await axios.get(` https://erp-backend-ed55.onrender.com/api/admissions/students/${studentId}`)
         setStudentDetails(res.data)
       } catch (error) {
         console.error("Error fetching student details:", error)
@@ -61,7 +61,7 @@ export default function DepositAmountPage() {
         receivedBy: cashForm.receivedBy
       }
 
-      await axios.post( "http://localhost:4000/api/deposit", payload)
+      await axios.post( "https://erp-backend-ed55.onrender.com/api/deposit", payload)
       alert("Deposit saved successfully!")
       setCashForm({ amount: "", date: "", transactionId: "", receivedBy: "", remarks: "" })
     } catch (err) {

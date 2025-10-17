@@ -34,7 +34,7 @@ export default function GraduationNameChangePage() {
   }, [])
 
   const fetchRequests = async () => {
-    const res = await fetch( "http://localhost:4000/api/Graduationnamechangeconfirmation")
+    const res = await fetch( "https://erp-backend-ed55.onrender.com/api/Graduationnamechangeconfirmation")
     const data = await res.json()
     setRequests(data)
     setFilteredData(data)
@@ -56,7 +56,7 @@ export default function GraduationNameChangePage() {
   }
 
   const updateStatus = async (id, status) => {
-    const res = await fetch(` http://localhost:4000/api/Graduationnamechangeconfirmation/${id}/${status}`, {
+    const res = await fetch(` https://erp-backend-ed55.onrender.com/api/Graduationnamechangeconfirmation/${id}/${status}`, {
       method: "POST",
     })
     if (res.ok) {
@@ -66,7 +66,7 @@ export default function GraduationNameChangePage() {
   }
 
   const deleteRequest = async (id) => {
-    const res = await fetch(` http://localhost:4000/api/Graduationnamechangeconfirmation/${id}`, {
+    const res = await fetch(` https://erp-backend-ed55.onrender.com/api/Graduationnamechangeconfirmation/${id}`, {
       method: "DELETE"
     })
     if (res.ok) {
@@ -88,7 +88,7 @@ export default function GraduationNameChangePage() {
       }
     })
 
-    const res = await fetch( "http://localhost:4000/api/Graduationnamechangeconfirmation", {
+    const res = await fetch( "https://erp-backend-ed55.onrender.com/api/Graduationnamechangeconfirmation", {
       method: "POST",
       body: formData
     })
@@ -261,7 +261,7 @@ export default function GraduationNameChangePage() {
               <DialogFooter>
                 <Button variant="outline" onClick={() => setIsEditOpen(false)}>Cancel</Button>
                 <Button type="button" onClick={async () => {
-                  const res = await fetch(` http://localhost:4000/api/Graduationnamechangeconfirmation/${selectedRequest._id}`, {
+                  const res = await fetch(` https://erp-backend-ed55.onrender.com/api/Graduationnamechangeconfirmation/${selectedRequest._id}`, {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(selectedRequest)

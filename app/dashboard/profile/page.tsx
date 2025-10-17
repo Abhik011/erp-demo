@@ -36,7 +36,7 @@ export default function ProfilePage() {
 
   /* fetch profile on mount */
   useEffect(() => {
-    axios.get( "http://localhost:4000/api/profile", { withCredentials: true })
+    axios.get( "https://erp-backend-ed55.onrender.com/api/profile", { withCredentials: true })
       .then(res => {
         const u = res.data;
         setFormData({
@@ -89,7 +89,7 @@ export default function ProfilePage() {
     fd.append("profile", file);
 
     try {
-      const { data } = await axios.post( "http://localhost:4000/api/upload", fd, {
+      const { data } = await axios.post( "https://erp-backend-ed55.onrender.com/api/upload", fd, {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       });
@@ -98,7 +98,7 @@ export default function ProfilePage() {
       setFormData(p => ({ ...p, photoUrl: data.url }));
 
       await axios.put(
-         "http://localhost:4000/api/profile",
+         "https://erp-backend-ed55.onrender.com/api/profile",
         { photoUrl: data.url },
         { withCredentials: true }
       );
@@ -111,7 +111,7 @@ export default function ProfilePage() {
 
   /* save full profile */
   const handleSaveChanges = () =>
-    axios.put( "http://localhost:4000/api/profile", formData, { withCredentials: true })
+    axios.put( "https://erp-backend-ed55.onrender.com/api/profile", formData, { withCredentials: true })
       .then(() => { toast({ title: "Profile Updated" }); setIsEditing(false); })
       .catch(() => toast({ title: "Could not update profile", variant: "destructive" }));
 

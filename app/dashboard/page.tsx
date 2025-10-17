@@ -66,7 +66,7 @@ export default function DashboardPage() {
   useEffect(() => {
     const fetchAdmissionChartData = async () => {
       try {
-        const response = await axios.get( "http://localhost:4000/api/admissions/admission-stats")
+        const response = await axios.get( "https://erp-backend-ed55.onrender.com/api/admissions/admission-stats")
         setDashboardData((prev: any) => ({
           ...prev,
           charts: {
@@ -82,11 +82,11 @@ export default function DashboardPage() {
     const fetchData = async () => {
       try {
         const [enquiryRes, userRes, lsqRes, admissionRes, chartRes] = await Promise.all([
-          axios.get( "http://localhost:4000/api/enquiries/count"),
-          axios.get( "http://localhost:4000/api/profile", { withCredentials: true }),
-          axios.get( "http://localhost:4000/api/lsq-enquiries/count"),
-          axios.get( "http://localhost:4000/api/admissions/count"),
-          axios.get( "http://localhost:4000/api/enquiry-stats"),
+          axios.get( "https://erp-backend-ed55.onrender.com/api/enquiries/count"),
+          axios.get( "https://erp-backend-ed55.onrender.com/api/profile", { withCredentials: true }),
+          axios.get( "https://erp-backend-ed55.onrender.com/api/lsq-enquiries/count"),
+          axios.get( "https://erp-backend-ed55.onrender.com/api/admissions/count"),
+          axios.get( "https://erp-backend-ed55.onrender.com/api/enquiry-stats"),
 
 
         ])

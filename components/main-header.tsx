@@ -24,7 +24,7 @@ export function MainHeader() {
   /* fetch user once */
   useEffect(() => {
     axios
-      .get( "http://localhost:4000/api/profile", { withCredentials: true })
+      .get( "https://erp-backend-ed55.onrender.com/api/profile", { withCredentials: true })
       .then((res) => {
         setUserName(res.data.name);
         setUserRole(res.data.role || "User");

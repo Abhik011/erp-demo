@@ -41,7 +41,7 @@ export default function LoginPage() {
     }
 
     try {
-      const response = await fetch( "http://localhost:4000/api/login", {
+      const response = await fetch( "https://erp-backend-ed55.onrender.com/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
